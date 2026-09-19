@@ -1,11 +1,5 @@
 # Meta Lead Realtime PoC
 
-## Overview
-
-Explain that this is a proof of concept for receiving Meta Lead Ads leads in real time and displaying them in a React Native Android application.
-
-Mention that FastAPI acts as the backend, receives Meta webhook events, retrieves the full lead details through the Meta Graph API, and pushes the lead to the mobile application through a WebSocket connection.
-
 ## Architecture
 
 Meta Lead Ad
@@ -40,7 +34,6 @@ Meta Lead Ad
 
 ## Project Structure
 
-Explain briefly:
 
 backend/
 - main.py — webhook, Graph API request, normalization and WebSocket endpoint
@@ -51,7 +44,6 @@ TorvLeads/
 
 ## Running the Project
 
-Explain the commands you actually use to:
 
 - activate the Python virtual environment
 - start Uvicorn
@@ -60,11 +52,8 @@ Explain the commands you actually use to:
 - configure ADB reverse for ports 8081 and 8000
 - launch the Android application
 
-Do not include access tokens or other credentials.
 
 ## Assumptions and Limitations
-
-Mention that:
 
 - This project is a proof of concept rather than a production system.
 - WebSocket connections are maintained in memory.
@@ -72,7 +61,3 @@ Mention that:
 - A Cloudflare tunnel is used to expose the local webhook endpoint to Meta.
 - Lead fields depend on the configured Meta Instant Form.
 - Credentials are stored using environment variables and are not committed to the repository.
-
-## Demo
-
-Add the Loom demonstration link here after recording it.
