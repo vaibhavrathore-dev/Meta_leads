@@ -31,11 +31,9 @@ async def verify_token(
 @app.post("/webhook")
 async def get_request(request : Request):
     payload = await request.json()
-    print(payload)
     leadgen_id = payload['entry'][0]['changes'][0]['value']['leadgen_id']
     lead_details = await fetch_details(leadgen_id)
     normal  = normalize_lead(lead_details)
-    print(normal)
     await manager.send_data(normal)
     return {
         "message" : "Informed the Backend"
@@ -50,8 +48,6 @@ async def fetch_details(leadgen_id):
     }
     async with httpx.AsyncClient() as client:
         response = await client.get(url=url,params=params)
-        print("Status:", response.status_code)
-        print("Meta response:", response.text)
 
         response.raise_for_status()
         data = response.json()
